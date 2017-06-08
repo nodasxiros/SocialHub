@@ -1,6 +1,6 @@
 <?php
 //set up database credentials
-$dbhost = '192.168.0.5';
+$dbhost = '192.168.0.2';
 $dbuser = 'nondas';
 $dbpass = '1234';
 $dbname = 'SocialHub';
@@ -46,7 +46,9 @@ function createTable($name, $query)
   function showProfile($user)
   {
     if (file_exists("$user.jpg"))
-      echo "<img src='$user.jpg' style='float:left;'>";
+      echo "
+            <div class='fb-profile'>
+            <img src='$user.jpg' class='fb-image-profile thumbnail' style='float:left;></div>";
 
     $result = queryMysql("SELECT * FROM profiles WHERE user='$user'");
 
